@@ -31,4 +31,4 @@ export function middleware(req) {
   return NextResponse.next();
 }
 
-export const config = { matcher: ["/admin/:path*", "/api/shipments/:path*", "/api/shipments"] };
+export const config = { matcher: ["/admin/:path*", "/api/shipments/:path*", "/api/shipments", "/api/settings"] };

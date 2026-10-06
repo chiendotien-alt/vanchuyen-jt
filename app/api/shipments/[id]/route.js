@@ -41,7 +41,7 @@ export async function POST(req, { params }) {
       const d = s.data;
       if (!d.receiverName || !d.receiverPhone || !d.receiverAddress) return bad("Thiếu tên, số điện thoại hoặc địa chỉ người nhận.");
       try {
-        const r = await getCarrier(s.carrier).createOrder(s);
+        const r = await (await getCarrier(s.carrier)).createOrder(s);
         await setPushed(s.id, { billCode: r.billCode, txlogisticid: r.txlogisticid });
       } catch (e) {
         await setError(s.id, e.message || e);
@@ -60,7 +60,7 @@ export async function POST(req, { params }) {
     if (action === "cancel") {
       if (!s.billCode || ["delivered", "returned", "cancelled"].includes(s.status)) return bad("Đơn này không hủy được.");
       try {
-        await getCarrier(s.carrier).cancelOrder(s);
+        await (await getCarrier(s.carrier)).cancelOrder(s);
       } catch (e) {
         await setError(s.id, e.message || e);
         return bad(e.message || "Hủy đơn lỗi");

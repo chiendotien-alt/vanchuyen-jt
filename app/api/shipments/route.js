@@ -11,7 +11,7 @@ import { STATUS_LABELS } from "@/lib/status";
 export async function GET() {
   try {
     return NextResponse.json(
-      { mock: isMock(), carriers: CARRIERS, labels: STATUS_LABELS, shipments: await listShipments() },
+      { mock: await isMock(), carriers: CARRIERS, labels: STATUS_LABELS, shipments: await listShipments() },
       { headers: { "Cache-Control": "no-store" } }
     );
   } catch (err) {

@@ -250,6 +250,7 @@ export default function AdminPage() {
         {meta.mock && (
           <span style={{ background: "#fef3c7", color: "#92400e", borderRadius: 8, padding: "6px 10px", fontSize: 13 }}>CHẾ ĐỘ THỬ — chưa gọi J&T thật</span>
         )}
+        <a href="/admin/settings" style={{ ...btn, textDecoration: "none", color: "#111", display: "inline-block" }}>⚙️ Cài đặt</a>
         <button style={btn} onClick={load} title="Tải lại">↻</button>
         <button style={btnBlue} onClick={openNew}>+ Thêm đơn tay</button>
       </div>

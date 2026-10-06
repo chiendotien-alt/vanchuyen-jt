@@ -11,6 +11,10 @@ Khi có tài khoản J&T: điền các biến JNT_* rồi đổi `CARRIER_MOCK` 
 1. Upload toàn bộ nội dung thư mục này lên một repo GitHub mới.
 2. Vercel → Add New → Project → chọn repo → trước khi Deploy, thêm Neon (Storage) và các biến bên dưới.
 
+## Cài đặt J&T ngay trên web
+Vào web → nút ⚙️ Cài đặt: điền thông tin J&T, kho gửi hàng, chọn Chế độ thử / J&T thật, bấm Lưu và Thử kết nối.
+Không cần vào Vercel. Các biến JNT_*, SENDER_*, CARRIER_MOCK bên dưới chỉ là phương án dự phòng (ô nào trên web để trống thì mới dùng biến).
+
 ## Biến môi trường (Vercel → Settings → Environment Variables)
 - ADMIN_USER, ADMIN_PASSWORD — đăng nhập trang quản trị
 - SHARED_SECRET — chuỗi bí mật tự đặt (dài), DÙNG CHUNG với web bot chat
